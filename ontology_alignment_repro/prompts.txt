@@ -1,0 +1,68 @@
+# Prompt templates (placeholders)
+# Fill placeholders: {source_label}, {source_parent}, {source_parent2},
+# {source_synonyms}, {target_label}, {target_parent}, {target_parent2}, {target_synonyms}
+
+-- P (structured, basic) --
+Analyze the following entities, each originating from a distinct ontology. Your task is to assess
+whether they represent the **same ontological concept**, considering both their semantic meaning
+and hierarchical position.
+
+1. Source entity: "{source_label}"
+- Direct ontological parent: {source_parent}
+
+2. Target entity: "{target_label}"
+- Direct ontological parent: {target_parent}
+
+Are these entities **ontologically equivalent** within their respective ontologies? Respond with "True" or "False".
+
+-- PEC (structured, extended context) --
+Analyze the following entities, each originating from a distinct ontology. Each is represented by
+its **ontological lineage**.
+
+1. Source entity ontological lineage:
+Level 0: {source_label}
+Level 1: {source_parent}
+Level 2: {source_parent2}
+
+2. Target entity ontological lineage:
+Level 0: {target_label}
+Level 1: {target_parent}
+Level 2: {target_parent2}
+
+Based on their lineage, do these entities represent the same ontological concept? Respond with "True" or "False".
+
+-- PNLF (natural-language friendly) --
+We have two entities from different ontologies.
+
+The first one is "{source_label}", which belongs to the broader category "{source_parent}"
+
+The second one is "{target_label}", which belongs to the broader category "{target_parent}"
+
+Do they mean the same thing? Respond with "True" or "False".
+
+-- PNLF_EC (natural-language friendly + extended context) --
+We have two entities from different ontologies.
+
+The first one is "{source_label}", which belongs to the broader category "{source_parent}", under the even broader category "{source_parent2}"
+
+The second one is "{target_label}", which belongs to the broader category "{target_parent}", under the even broader category "{target_parent2}"
+
+Do they mean the same thing? Respond with "True" or "False".
+
+-- PNLF_S (natural-language friendly + synonyms) --
+We have two entities from different ontologies.
+
+The first one is "{source_label}", which falls under the category "{source_parent}".
+
+The second one is "{target_label}", also known as {target_synonyms}, which falls under the category "{target_parent}".
+
+Do they mean the same thing? Respond with "True" or "False".
+
+-- PNLF_EC+S (NLF + extended context + synonyms) --
+We have two entities from different ontologies.
+
+The first one is "{source_label}", belongs to broader category "{source_parent}", under "{source_parent2}" (also known as {source_synonyms}).
+
+The second one is "{target_label}", also known as {target_synonyms}, belongs to broader category "{target_parent}", under "{target_parent2}".
+
+Do they mean the same thing? Respond with "True" or "False".

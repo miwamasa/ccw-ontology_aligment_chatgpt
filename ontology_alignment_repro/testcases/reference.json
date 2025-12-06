@@ -1,0 +1,6 @@
+[
+  ["O1:Cell", "O2:Cell"],
+  ["O1:Tissue", "O2:Tissue"],
+  ["O1:AlveolusEpithelium", "O2:AlveolarEpithelium"],
+  ["O1:LungEpithelium", "O2:Epithelium"]
+]
